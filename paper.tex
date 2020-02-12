@@ -1,8 +1,12 @@
 \documentclass{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
 \usepackage{hyperref}
-\usepackage{graphics}
-\usepackage{multicol}
+\usepackage{graphicx}
+
+\graphicspath{ {./img/} }
 
 \begin{document}
 
@@ -21,5 +25,12 @@ The nature of the computiations may vary from machine learning to any other comp
 In this document we explain how and which methods and technologies are used to implement the project.
 
 \end{abstract}
+
+\input{intro.tex}
+\input{nodes.tex}
+\input{tasks.tex}
+
+\bibliography{paper}
+\bibliographystyle{plain}
 
 \end{document}
