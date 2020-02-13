@@ -3,7 +3,7 @@
 Task is a set of actions which should be performed on the node.
 Also task must contain the list of system requirements which is necessary for its execution.
 
-To describe the task the following type specification must be used:
+To describe the task the following type specification should be used:
 
 \begin{minted}{erlang}
 -type xpu() :: <<"cpu">> | <<"nvidia">> | <<"amd">>.
@@ -41,14 +41,30 @@ To describe the task the following type specification must be used:
 
 More detailed specification may be found in the project OSS\cite{oss} documents.
 
+Each task accepted by the system has unique identifier (UUID)\cite{uuid}.
+Using this identifier it's possible to track, cancel or gather result of task.
+
+After the task is accomplished the following metrics are collected for future proceeding:
+
+\begin{itemize}
+    \item CPU time spent
+    \item GPU time spent
+    \item Incomming network traffic
+    \item Outbound network traffic
+    \item Total elapsed time
+\end{itemize}
+
+These metrics are used for reward calculation.
+
+\subsection{Task examples}
+
 Task can be described using both JSON or YAML formats.
+
+GPU mining task example described in YAML format:
+
+\inputminted{yaml}{claymore-cuda-mining-task.yaml}
 
 \newpage
 Neural Style Transfer task example described in JSON:
 
 \inputminted{json}{neural-style-task.json}
-
-\newpage
-GPU mining task example described in YAML format:
-
-\inputminted{yaml}{claymore-cuda-mining-task.yaml}
