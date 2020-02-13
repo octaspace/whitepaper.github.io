@@ -1,8 +1,10 @@
+FLAGS=-shell-escape
+
 all:
-	pdflatex paper
+	pdflatex $(FLAGS) paper
 	bibtex paper
-	pdflatex paper
-	pdflatex paper
+	pdflatex $(FLAGS) paper
+	pdflatex $(FLAGS) paper
 
 clean:
 	ls paper.* | egrep -v "tex|bib" | xargs rm -f

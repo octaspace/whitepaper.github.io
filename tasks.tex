@@ -5,7 +5,7 @@ Also task must contain the list of system requirements which is necessary for it
 
 To describe the task the following type specification must be used:
 
-\begin{verbatim}
+\begin{minted}{erlang}
 -type xpu() :: <<"cpu">> | <<"nvidia">> | <<"amd">>.
 
 -type step() :: #{
@@ -26,7 +26,7 @@ To describe the task the following type specification must be used:
     },
     <<"steps">> := [step()]
 }.
-\end{verbatim}
+\end{minted}
 
 \begin{itemize}
     \item name - human readable description of the task
@@ -42,3 +42,13 @@ To describe the task the following type specification must be used:
 More detailed specification may be found in the project OSS\cite{oss} documents.
 
 Task can be described using both JSON or YAML formats.
+
+\newpage
+Neural Style Transfer task example described in JSON:
+
+\inputminted{json}{neural-style-task.json}
+
+\newpage
+GPU minining task example described in YAML format:
+
+\inputminted{yaml}{claymore-cuda-mining-task.yaml}
