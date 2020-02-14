@@ -33,7 +33,7 @@ To describe the task the following type specification should be used:
     \item xpu - the type of execution unit, can be \textbf{cpu}, \textbf{nvidia} or \textbf{amd} if task require GPU
     \item xpu-cpu-fallback - in case if xpu is set to use GPU but no node with GPU found during \textbf{xpu-fallback-wait-time} time task will assigned to node with CPU only
     \item xpu-n - minimum amount of the required execution units eg. amount of GPUs or CPU cores
-    \item pending-ttl - task will be canceled if no one node will found during \textbf{pending-ttl} period
+    \item pending-ttl - task will be canceled if no node is found during \textbf{pending-ttl} period
     \item ttl - maximum task execution time
     \item spaces - the list of specific isolated environments per xpu type
     \item steps - the list of actions which should be performed on the node
