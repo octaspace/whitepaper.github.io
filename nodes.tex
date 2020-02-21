@@ -1,22 +1,22 @@
 \section{Computation units}
 
-Compuation units aka octa-nodes is a primary component in the Octa.Space infrastructure.
-They are responsible for providing the compuation power for solving the tasks.
+Compuation units aka octa-nodes are the primary component in the Octa.Space infrastructure.
+They are responsible for providing the compuation power for tasks solving.
 In general the octa-node is a computer with some amount of CPUs, GPUs, memory and disk space.
 Each node can be used for computation or/and data storing and serving.
 \\
 
-To start accepting and solving tasks the special software must be installed on the computer.
-This software is called \textbf{ORC} it's acts as middleware between OS and compuation environments.
+It's necessary to install the special software on the computer to start accepting and solving the tasks.
+This software is called \textbf{ORC}, it acts as a middleware between OS and compuation environments.
 \\
 
 \textbf{ORC} is responsible for the following:
 
 \begin{itemize}
-    \item Exposing secure RPC channel to receive commands
-    \item Organizing isolated environments for tasks
-    \item Collecting the system parameters, metrics and loads
-    \item Providing data storage interface
+    \item Expose secure RPC channel to receive commands
+    \item Organize isolated environments for the tasks
+    \item Collect the system parameters, metrics and loads
+    \item Provide the data storage interface
     \item Self-upgrade and self-maintenance operations
 \end{itemize}
 
@@ -26,7 +26,7 @@ This software is called \textbf{ORC} it's acts as middleware between OS and comp
 \caption{Octa-node layers}
 \end{figure}
 
-Secure channel is implemented using HTTPS\cite{https} protocol with validating each request using security token.
+Secure channel is implemented using HTTPS\cite{https} protocol with each request validation using security token.
 
 Security token is a fingerprint of the node, it's calculated in the following manner:
 
@@ -42,10 +42,12 @@ Where
     \item RandomInt - random integer number
 \end{itemize}
 
-Commands recieved by the node is executed in the isolated environments.
-These environments called \textbf{spaces} and implemented using Docker technology.
+Commands recieved by the node are executed in the isolated environments.
+These environments are called \textbf{spaces} and implemented using the Docker technology.
 
-\textbf{Spaces} divided into two types: mandatory and task specific
+\newpage
+
+\textbf{Spaces} is divided into two types: mandatory and task specific
 
 \begin{figure}[h]
 \centering
@@ -54,9 +56,9 @@ These environments called \textbf{spaces} and implemented using Docker technolog
 \end{figure}
 
 Mandatory \textbf{spaces} are always up and performs network maintainance and support functions.
-Task specific \textbf{spaces} running on-demand and depends of type of task which needs to be done.
+Task specific \textbf{spaces} are run on-demand and depend on the type of the task which needs to be done.
 
-System data collected by \textbf{ORC}:
+System data are collected by \textbf{ORC}:
 
 \begin{itemize}
     \item CPU information eg. amount, speed and utilization of cores
@@ -66,6 +68,6 @@ System data collected by \textbf{ORC}:
     \item Performance metrics like request-response time, network latency and so on
 \end{itemize}
 
-These data is used to improve the quality of nodes and exclude low performance nodes or non stable ones.
+These data are used to improve the quality of the nodes and exclude the low performance nodes or non stable ones.
 
-For cases when it's impossible to use IPFS for task data \textbf{ORC} will use internal storage.
+In cases when it's impossible to use IPFS for task data \textbf{ORC} internal storage will be used.

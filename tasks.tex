@@ -1,7 +1,26 @@
 \section{Tasks}
 
 Task is a set of actions which should be performed on the node.
-Also task must contain the list of system requirements which is necessary for its execution.
+The task must also contain the list of the system requirements which is necessary for its execution.
+
+Each task accepted by the system has a unique identifier (UUID)\cite{uuid}.
+It's possible to track, cancel or gather the results of the task using this identifier.
+
+\newpage
+
+After the task is accomplished the following metrics are collected for future proceeding:
+
+\begin{itemize}
+    \item CPU time spent
+    \item GPU time spent
+    \item Incomming network traffic
+    \item Outbound network traffic
+    \item Total elapsed time
+\end{itemize}
+
+These metrics are used for reward calculation, QA and so on.
+
+\subsection{Task specification}
 
 To describe the task the following type specification should be used:
 
@@ -30,8 +49,8 @@ To describe the task the following type specification should be used:
 
 \begin{itemize}
     \item name - human readable description of the task
-    \item xpu - the type of execution unit, can be \textbf{cpu}, \textbf{nvidia} or \textbf{amd} if task require GPU
-    \item xpu-cpu-fallback - in case if xpu is set to use GPU but no node with GPU found during \textbf{xpu-fallback-wait-time} time task will assigned to node with CPU only
+    \item xpu - the type of execution unit, can be \textbf{cpu}, \textbf{nvidia} or \textbf{amd} if the task requires GPU
+    \item xpu-cpu-fallback - in case if xpu is set to use GPU but no node with GPU found during \textbf{xpu-fallback-wait-time} time task will be assigned to the node with CPU only
     \item xpu-n - minimum amount of the required execution units eg. amount of GPUs or CPU cores
     \item pending-ttl - task will be canceled if no node is found during \textbf{pending-ttl} period
     \item ttl - maximum task execution time
@@ -40,21 +59,6 @@ To describe the task the following type specification should be used:
 \end{itemize}
 
 More detailed specification may be found in the project OSS\cite{oss} documents.
-
-Each task accepted by the system has unique identifier (UUID)\cite{uuid}.
-Using this identifier it's possible to track, cancel or gather results of task.
-
-After the task is accomplished the following metrics are collected for future proceeding:
-
-\begin{itemize}
-    \item CPU time spent
-    \item GPU time spent
-    \item Incomming network traffic
-    \item Outbound network traffic
-    \item Total elapsed time
-\end{itemize}
-
-These metrics are used for reward calculation, QA and so on.
 
 \subsection{Task examples}
 
