@@ -43,6 +43,7 @@ To describe the task the following type specification should be used:
     <<"spaces">> := #{
         xpu() := binary()
     },
+    <<"artifacts">>              => [binary()]
     <<"steps">> := [step()]
 }.
 \end{minted}
@@ -55,6 +56,7 @@ To describe the task the following type specification should be used:
     \item pending-ttl - task will be canceled if no node is found during \textbf{pending-ttl} period
     \item ttl - maximum task execution time
     \item spaces - the list of specific isolated environments per xpu type
+    \item artifacts - the list of files produced by the task and which must be downloaded once task is completed
     \item steps - the list of actions which should be performed on the node
 \end{itemize}
 
