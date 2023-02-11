@@ -20,11 +20,6 @@ This software is called \textbf{ORC}, it acts as a middleware between OS and com
     \item Self-upgrade and self-maintenance operations
 \end{itemize}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=5cm]{os-orc-spaces}
-\caption{Octa-node layers}
-\end{figure}
 
 Secure channel is implemented using HTTPS\cite{https} protocol with each request validation using security token.
 
@@ -48,12 +43,6 @@ These environments are called \textbf{spaces} and implemented using the Docker t
 \newpage
 
 \textbf{Spaces} is divided into two types: mandatory and task specific
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=10cm]{spaces}
-\caption{Spaces}
-\end{figure}
 
 Mandatory \textbf{spaces} are always up and performs network maintainance and support functions.
 Task specific \textbf{spaces} are run on-demand and depend on the type of the task which needs to be done.

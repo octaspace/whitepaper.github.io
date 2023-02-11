@@ -4,35 +4,53 @@
 \usepackage[english]{babel}
 
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue,
+    pdftitle={OctaSpace White Paper}
+}
 \usepackage{graphicx}
 \usepackage[parfill]{parskip}
 \usepackage{minted}
 
 \graphicspath{ {./img/} }
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
 
 \begin{document}
 
-\title{The Octa.Space project white paper}
+\title{OctaSpace White Paper}
 
-\author{Octa.Space\\development team}
+\author{Artem Teslenko}
 
 \maketitle
 
+\tableofcontents
+
 \begin{abstract}
-Octa.Space project aims to provide the functional and transparent way to perform computiations in distributed environment,
-to store/serve any amounts of data and so on.
+OctaSpace is a public cloud, running on hardware provided by users around the world.
 
-The nature of the computiations may vary from machine learning to any other ones which requires massive compuation power.
+The project focusing on building real usage services like distributed computing, VPN, and data storage.
 
-In this document we explain how and which methods and technologies are used to implement the project.
+In this document, we explain which methods and technologies are used to implement the project.
 
 \end{abstract}
 
 \input{intro.tex}
-\input{nodes.tex}
-\input{tasks.tex}
-\input{reputation.tex}
-\input{blockchain.tex}
+\newpage
+\input{arch.tex}
+\newpage
+\input{mp.tex}
+\newpage
+\input{services.tex}
 
 \bibliography{paper}
 \bibliographystyle{plain}
