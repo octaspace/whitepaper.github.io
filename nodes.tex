@@ -1,62 +1,69 @@
-\section{Computation units}
+\section{Nodes}
 
-Compuation units aka octa-nodes are the primary component in the Octa.Space infrastructure.
-They are responsible for providing the compuation power for tasks solving.
-In general the octa-node is a computer with some amount of CPUs, GPUs, memory and disk space.
-Each node can be used for computation or/and data storing and serving.
-\\
+In the nutshell node is a Linux machine with special software installed.
 
-It's necessary to install the special software on the computer to start accepting and solving the tasks.
-This software is called \textbf{ORC}, it acts as a middleware between OS and compuation environments.
-\\
+This software is called \textbf{ORC}, using it \textbf{OCTA CORE} is able to establish secure communication channel to the node.
 
-\textbf{ORC} is responsible for the following:
+Communication between \textbf{OCTA CORE} and \textbf{ORC} is doing in RPC\cite{rpc} like manner.
 
-\begin{itemize}
-    \item Expose secure RPC channel to receive commands
-    \item Organize isolated environments for the tasks
-    \item Collect the system parameters, metrics and loads
-    \item Provide the data storage interface
-    \item Self-upgrade and self-maintenance operations
-\end{itemize}
+Secure channel is implemented using HTTPS\cite{https} protocol with validating each request using security token.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{core-orc-channel}
+    \caption{Secure communication channel}
+\end{figure}
 
-Secure channel is implemented using HTTPS\cite{https} protocol with each request validation using security token.
-
-Security token is a fingerprint of the node, it's calculated in the following manner:
-
-\begin{verbatim}
-    Token = SHA256(IP, Timestamp, RandomInt)
-\end{verbatim}
-
-Where
+\textbf{ORC} is responsible for the following activities:
 
 \begin{itemize}
-    \item IP - node public IPv4 address
-    \item Timestamp - the time when node is installed in milliseconds
-    \item RandomInt - random integer number
+    \item Detect installed hardware: CPU, GPUs, RAM, volume of disk storage
+    \item Collect metrics about hardware usage, like free/used disk/ram space, CPU and GPU load, temperature and fans speed
+    \item Manage Docker\cite{docker} containers and Firecracker\cite{firecracker} microVMs
 \end{itemize}
 
-Commands recieved by the node are executed in the isolated environments.
-These environments are called \textbf{spaces} and implemented using the Docker technology.
+To cover a big range of supported hardware node can be installed on any machines with x86\_64\cite{x86_64} or ARM\cite{arm} architecture.
 
-\newpage
+Also node must meet minimum system requirements: 1 CPU, 1 Gb of RAM, 10Gb of free disk space.
 
-\textbf{Spaces} is divided into two types: mandatory and task specific
+Depending on the purpose of the node, the requirements for hardware may change.
 
-Mandatory \textbf{spaces} are always up and performs network maintainance and support functions.
-Task specific \textbf{spaces} are run on-demand and depend on the type of the task which needs to be done.
+For example, for a node that provides only VPN, it is enough to meet the minimum requirements.
+For nodes that are designed to perform tasks related to AI/ML, it is important to have powerful GPUs connected though fast PCIe interface and enough disk storage.
 
-System data are collected by \textbf{ORC}:
+Both NVIDIA and AMD GPUs supported as well.
+
+To determine the performance of a node, the following measurements are performing:
 
 \begin{itemize}
-    \item CPU information eg. amount, speed and utilization of cores
-    \item GPU information including amount and model of GPUs, memory size and amount of graphic processors
-    \item Total and free disk space, IO metrics
-    \item Total and free memory amount
-    \item Performance metrics like request-response time, network latency and so on
+    \item Network upload/download speed
+    \item Disk write speed
+    \item GPU performance using AI benchmark (only for NVIDIA)
 \end{itemize}
 
-These data are used to improve the quality of the nodes and exclude the low performance nodes or non stable ones.
+\subsection{Verification}
 
-In cases when it's impossible to use IPFS for task data \textbf{ORC} internal storage will be used.
+Ensuring that your node infrastructure operates smoothly and reliably is crucial for providing high-quality services to end-users.
+
+Every new node joined to cloud must be verified and confirmed that it met requirements and able to provide service.
+
+From time to time, we conduct re-verification checks on verified nodes, so it's essential to keep an eye on the status of your nodes to avoid them being changed to unverified.
+
+What exactly checking to be sure what node is properly configured:
+
+\begin{itemize}
+    \item Met hardware requirement
+    \item System clock is synchronized
+    \item All necessary network ports are open
+    \item GPU driver is correctly installed
+\end{itemize}
+
+The list of checks will be increasing in future.
+
+The following restrictions are applied for the unverified nodes:
+
+\begin{itemize}
+    \item Nodes can't provide services
+    \item Nodes can't participate in \hyperref[sec:staking]{staking}
+\end{itemize}
+
