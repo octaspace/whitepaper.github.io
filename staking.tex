@@ -1,2 +1,68 @@
 \section{Staking}
 \label{sec:staking}
+
+To incentive interest of holding the staking mechanism is introduced.
+
+Using it people who locked some amount of coins and run node is rewarded.
+
+There are requirements which need met to activate staking:
+
+\begin{itemize}
+    \item Collateral - 100\_000 OCTA
+    \item Node reliability for the last 30 days $\ge$ 75\%
+    \item Node must be verified
+\end{itemize}
+
+To start staking it's necessary to have the address wallet with enough balance and link it to existing node.
+Reward will be come to the wallet provided.
+
+If system detect balance less than collateral staking will be disabled for such wallet-node pair for
+several rounds.
+
+\subsection{Reward distribution scheme}
+
+The billing period is 1 week (every 7 days).
+
+Let's assume that block time is always 15 seconds then the following amount of blocks would be mined:
+
+\begin{itemize}
+    \item 1 minute - 4
+    \item 1 hour - 240
+    \item 1 day - 5760
+    \item 7 days - 40320
+    \item 30 days - 172800
+\end{itemize}
+
+In this calculation we will use reward amount for Arcturus and Oldenburg eras where 1.5 OCTA from each block going to staking fund.
+
+The total amount of coins mined for 1 week would be 60480 OCTA.
+
+Let’s assume we have 10 nodes up and running, then the 60480 OCTA would be distributed across they in the following proportion:
+
+\begin{itemize}
+    \item 60\% (base reward) - 36240 OCTA, 3624 for each node
+    \item 20\% (gpu reward) - 12080 OCTA, 1208 for each node which provide renting service with GPU
+    \item 10\% (vpn reward) - 6040 OCTA, 604 for each node which provide VPN service
+    \item 10\% (rent reward) - 6040 OCTA, 604 for each node which provide renting service
+\end{itemize}
+
+In case of no nodes for which needs to distribute 40\% (except base reward) the coins will be left in staking fund for the next round.
+
+Most profitable variant is to have node with GPU and which provides both services.
+Such node will be rewarded by 6040 OCTA per week and also additional payments for services usage.
+
+Due to the current scheme, we can calculate minimal monthly ROI in the following way:
+
+\[
+    ROI = \frac{MonthReward / Collateral * 100}{ N / 100 * 60}
+\]
+
+Where \textbf{MonthReward} is 172800 blocks multiply by staking reward according to current era.
+
+\textbf{N} is amount of nodes participated in staking, for example 10.
+
+Therefore the minimal ROI for Arcturus and Oldenburg eras will be:
+
+\[
+    ROI = \frac{172800 / 100000 * 100}{10 / 100 * 60} = 10.36\%
+\]
