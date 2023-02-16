@@ -22,16 +22,25 @@ Secure channel is implemented using HTTPS\cite{https} protocol with validating e
     \item Manage Docker\cite{docker} containers and Firecracker\cite{firecracker} microVMs
 \end{itemize}
 
+There are two types of nodes: \textbf{blockchain} and \textbf{service}
+
+The first one is responsible for support of OCTA Layer 1 blockchain by running network node software.
+As a result such nodes making network more stable, distributed, more latency fair and speed up the synchronization.
+
+Service node provides resources we used to implement services for the end users.
+
+\subsection{Hardware and software requirements}
+
 To cover a big range of supported hardware node can be installed on any machines with x86\_64\cite{x86_64} or ARM\cite{arm} architecture.
 
-Also node must meet minimum system requirements: 1 CPU, 1 Gb of RAM, 10Gb of free disk space.
+Hardware must meet minimum system requirements: 1 CPU, 1 Gb of RAM, 10Gb of free disk space.
 
 Depending on the purpose of the node, the requirements for hardware may change.
 
 For example, for a node that provides only VPN, it is enough to meet the minimum requirements.
 For nodes that are designed to perform tasks related to AI/ML, it is important to have powerful GPUs connected though fast PCIe interface and enough disk storage.
 
-Both NVIDIA and AMD GPUs supported as well.
+As for GPU, both NVIDIA and AMD GPUs supported as well.
 
 To determine the performance of a node, the following measurements are performing:
 
@@ -39,6 +48,20 @@ To determine the performance of a node, the following measurements are performin
     \item Network upload/download speed
     \item Disk write speed
     \item GPU performance using AI benchmark (only for NVIDIA)
+\end{itemize}
+
+These perfomance metrics helps users to choose the hardware they need to for their tasks.
+
+Node software can be installed on any OS Linux distribution but we focusing on Ubuntu LTS or Debian as a primary systems.
+
+\subsection{Security}
+
+To eliminate possible security risks for users using \textbf{ORC} on their machines we apply the following rules and guidelines:
+
+\begin{itemize}
+    \item \textbf{ORC} is open sourced, this may possible to make audit by other people that software does not have malicious code
+    \item Keep code base of \textbf{ORC} is small as possible for ease auditing
+    \item Node software run under non privilaged user and don't have any permissions which not need for operation
 \end{itemize}
 
 \subsection{Verification}
@@ -66,4 +89,3 @@ The following restrictions are applied for the unverified nodes:
     \item Nodes can't provide services
     \item Nodes can't participate in \hyperref[sec:staking]{staking}
 \end{itemize}
-
