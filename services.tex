@@ -10,16 +10,62 @@ In our opinion, these services that may be of interest to users and will find ap
 
 \subsection{GPU marketplace}
 
-GPU rental
+This service provide ability to rent or rent out GPUs power.
+
+This power may used to solve tasks in AI/ML, CGI rendering or any other fields where powerful GPUs is necessary.
+
+Because we support both NVIDIA and AMD this increase the spectrum of tasks be solved.
+
+Access to the rented instances is provided via SSH\cite{SSH} protocol.
+
+Also it's possible to use Jupyter\cite{jupyter} and LiveBook\cite{livebook} systems for interactive access.
+
+The rented GPU instances can be combined into a cluster, which makes it possible to run and develop distributed programs,
+for example distributed training of ML models using TensorFlow\cite{tensorflow} or PyTorch\cite{pytorch}.
 
 \subsection{VPN}
 
-VPN
+OCTA VPN\cite{VPN} offers a variety of key benefits to its users.
+One of the main advantages is its ease of setup, which is made possible by utilizing non-modified and open-source software that is compatible with a wide range of platforms.
+
+Additionally, users have the flexibility to choose from a variety of VPN technologies to suit their needs.
+There are also no limitations on the number of devices that can be connected simultaneously.
+
+To add to that, the billing model is pay-as-you-go, which means you are billed only for the amount of data you use.
+This gives you complete control over your usage and costs.
+
+Service don’t any logging of the user traffic or DNS requests.
+
+VPN access is implemented using the following technologies:
+
+\begin{itemize}
+    \item WireGuard
+    \item ShadowSocks
+    \item OpenVPN
+\end{itemize}
+
+In the future more VPN types will be added, including some to bypass China's golden shield (Great Firewall of China).
 
 \subsection{HashCache}
 
-HashCache
+HashCache is a Password Recovery service.
+
+This is a service for performing password cracking operations on a large scale.
+It utilizes multiple nodes working together in a coordinated manner to speed up the cracking process.
+
+This is achieved by dividing the cracking workload among the nodes,
+allowing them to work in parallel on different parts of the task.
+
+The system is designed to be highly configurable and can be optimized for different types of cracking operations, such as dictionary attacks, brute force attacks, and others.
 
 \subsection{Instant File Sharing}
 
-Instant File Sharing
+This service provide a easy way to upload a file, share a short link, and after it is downloaded, the file is completely deleted.
+
+Key benefits:
+
+\begin{itemize}
+    \item All files are encrypted
+    \item It's possible to set expiration (Time To Live), after such period file will be deleted
+    \item Simple RESTful API
+\end{itemize}
