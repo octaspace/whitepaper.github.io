@@ -5,6 +5,7 @@ paper.tex:
 	bibtex paper
 	pdflatex $(FLAGS) paper
 	pdflatex $(FLAGS) paper
+	cp paper.pdf octaspace-whitepaper.pdf
 
 clean:
 	ls paper.* | egrep -v "tex|bib" | xargs rm -f
