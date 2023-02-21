@@ -8,6 +8,12 @@ The following picture shows the core components and interfaces
     \caption{High Level Architecture}
 \end{figure}
 
+\subsection{Blockchain}
+
+Utilizing Pirl's 51 percent attack proof and hybrid PoW and PoS Chain, transactions are computationally and financially impractical to reverse. The backbone of the blockchain is built using go-ethereum technologies, resulting in a feature-rich chain complete with oracles, state channels, and smart contracts.
+
+The PoW/PoS system uses both PoW and PoS mechanisms simultaneously to provide maximum security against 51 percent attacks while minimizing the risk of centralization. By combining PoW and PoS, the network is secured by both computational power and the stake of validators, offering a more robust and energy-efficient way of maintaining the integrity of the blockchain while also significantly reducing the risk of double spend attacks. This blockchain is responsible for securing two layers.
+
 \subsection{Layer 1 network}
 
 \textbf{OCTA Layer 1} is PoW\cite{pow} blockchain network is used for the frontend user financial operations using the native coin OCTA.
@@ -38,8 +44,8 @@ These gateways provides unified API for \textbf{OCTA CORE} layer to give it abil
 This API is private and not accessible outside.
 
 \subsection{OCTA CORE and Application Layer}
-
-The core engine of our system, it's responsible for the following operations:
+The engine of our system, the compute rental manager, seamlessly handles all requests for compute rentals and communicates with the nodes and user applications to make it effortless for users to access and use the resources of connected nodes. This layer is designed to be user-friendly, so even those without technical expertise can take advantage of the available resources with ease. 
+Its the core engine of our system, it's responsible for the following operations:
 
 \begin{itemize}
     \item Communicates, monitoring and low level interaction with nodes
@@ -52,6 +58,7 @@ The core engine of our system, it's responsible for the following operations:
 \end{itemize}
 
 \subsection{Resource Layer}
+While the Octa Chain is very capable at processing large amounts of transactions the real aim of the project is to provide real world applications and to bridge the gap of computational owners and computational users. To accomplish this we’ve built Octa nodes
 
 This layer consist of hardware(nodes) connected to the OctaSpace cloud.
 
