@@ -5,4 +5,5 @@
 *.bbl
 *.blg
 *.toc
+dist
 _minted-paper
