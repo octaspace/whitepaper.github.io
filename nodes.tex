@@ -31,18 +31,15 @@ Service node provides resources we used to implement services for the end users.
 
 \subsection{Hardware and software requirements}
 
-To cover a big range of supported hardware node can be installed on any machines with x86\_64\cite{x86_64} or ARM\cite{arm} architecture.
+To cover a wide range of supported hardware, node software can be installed on any machine with x86\_64\cite{x86_64} or ARM\cite{arm} architecture.
 
-Hardware must meet minimum system requirements: 1 CPU, 1 Gb of RAM, 10Gb of free disk space.
+In order to run the node, the hardware must meet the minimum system requirements, which are as follows: 1 CPU, 1 Gb of RAM, and 10Gb of free disk space.
 
-Depending on the purpose of the node, the requirements for hardware may change.
+However, the requirements for hardware may vary depending on the intended purpose of the node. For instance, a node that provides only VPN services may only need to meet the minimum requirements. Conversely, nodes that are designed to perform AI/ML tasks will require powerful GPUs connected with a high bandwidth PCIe interface, as well as ample disk storage.
 
-For example, for a node that provides only VPN, it is enough to meet the minimum requirements.
-For nodes that are designed to perform tasks related to AI/ML, it is important to have powerful GPUs connected though fast PCIe interface and enough disk storage.
+It's worth noting that both NVIDIA and AMD GPUs are supported by the system.
 
-As for GPU, both NVIDIA and AMD GPUs supported as well.
-
-To determine the performance of a node, the following measurements are performing:
+To determine the performance of a node, the following measurements are taken:
 
 \begin{itemize}
     \item Network upload/download speed
@@ -50,38 +47,41 @@ To determine the performance of a node, the following measurements are performin
     \item GPU performance using AI benchmark (only for NVIDIA)
 \end{itemize}
 
-These perfomance metrics helps users to choose the hardware they need to for their tasks.
+These performance metrics help users to choose the hardware they need for their tasks.
 
-Node software can be installed on any OS Linux distribution but we focusing on Ubuntu LTS or Debian as a primary systems.
+The node software can be installed on any Linux distribution; however, we primarily focus on Ubuntu LTS or Debian as the recommended operating systems.
+
+Support for Windows in development.
 
 \subsection{Security}
 
-To eliminate possible security risks for users using \textbf{ORC} on their machines we apply the following rules and guidelines:
+To eliminate possible security risks for users running the software \textbf{ORC} on their machines, we follow a set of rules and guidelines, which include: 
 
 \begin{itemize}
     \item \textbf{ORC} is open sourced, this may possible to make audit by other people that software does not have malicious code
     \item Keep code base of \textbf{ORC} is small as possible for ease auditing
     \item Node software run under non privilaged user and don't have any permissions which not need for operation
+    \item Regular software updates to ensure that the latest security patches are applied. Along with comprehensive testing of software to detect and address any potential security issues.
 \end{itemize}
 
 \subsection{Verification}
 
-Ensuring that your node infrastructure operates smoothly and reliably is crucial for providing high-quality services to end-users.
+Ensuring that node infrastructure operates smoothly and reliably is crucial for providing high-quality services to end-users.
 
-Every new node joined to cloud must be verified and confirmed that it met requirements and able to provide service.
+Each new node that joins the cloud must be verified and confirmed to meet the necessary requirements and provide services.
 
-From time to time, we conduct re-verification checks on verified nodes, so it's essential to keep an eye on the status of your nodes to avoid them being changed to unverified.
+Periodically, we conduct re-verification checks on verified nodes. Therefore, it's crucial to monitor the status of your nodes to avoid having them changed to an unverified status.
 
-What exactly checking to be sure what node is properly configured:
+The checks performed to ensure that the node is properly configured may include but are not limited to:
 
 \begin{itemize}
-    \item Met hardware requirement
+    \item Meet minimum hardware requirements
     \item System clock is synchronized
     \item All necessary network ports are open
     \item GPU driver is correctly installed
 \end{itemize}
 
-The list of checks will be increasing in future.
+The list of checks will be expanding in the future to ensure even greater accuracy and reliability.
 
 The following restrictions are applied for the unverified nodes:
 

@@ -8,6 +8,17 @@ The following picture shows the core components and interfaces
     \caption{High Level Architecture}
 \end{figure}
 
+\subsection{Blockchain}
+OctaSpace utilizes a Layer 1 PoW blockchain that is secured using the pirl 51\% guard technique. This security protocol provides protection against attacks on the network, making it a secure platform for users to transact on.
+
+In addition to the Layer 1 PoW blockchain, OctaSpace also employs a Layer 2 PoA blockchain that is used to speed up transactions for billing operations. This blockchain is based on validators and is not used to secure the Layer 1 PoW blockchain.
+
+By utilizing this Layer 2 PoA blockchain, OctaSpace is able to process a large number of transactions quickly and efficiently for billing operations such as charging users for the services they have used.
+
+Overall, OctaSpace's use of the pirl 51\% guard and Layer 2 PoA blockchain demonstrate its commitment to security and efficiency. By employing these techniques, OctaSpace is able to provide a secure and stable platform for its users while also maintaining fast and efficient transactions for billing operations.
+
+\newpage
+
 \subsection{Layer 1 network}
 
 \textbf{OCTA Layer 1} is PoW\cite{pow} blockchain network is used for the frontend user financial operations using the native coin OCTA.
@@ -38,8 +49,11 @@ These gateways provides unified API for \textbf{OCTA CORE} layer to give it abil
 This API is private and not accessible outside.
 
 \subsection{OCTA CORE and Application Layer}
+The engine of our system, the compute rental manager, seamlessly handles all requests for compute rentals and communicates with the nodes and user applications to make it effortless for users to access and use the resources of connected nodes.
 
-The core engine of our system, it's responsible for the following operations:
+This layer is designed to be user-friendly, so even those without technical expertise can take advantage of the available resources with ease.
+
+Its the core engine of our system, it's responsible for the following operations:
 
 \begin{itemize}
     \item Communicates, monitoring and low level interaction with nodes
@@ -52,6 +66,7 @@ The core engine of our system, it's responsible for the following operations:
 \end{itemize}
 
 \subsection{Resource Layer}
+While the Octa Chain is very capable at processing large amounts of transactions the real aim of the project is to provide real world applications and to bridge the gap of computational owners and computational users. To accomplish this we’ve built Octa nodes
 
 This layer consist of hardware(nodes) connected to the OctaSpace cloud.
 

@@ -1,11 +1,7 @@
 \section{Staking}
 \label{sec:staking}
 
-To incentive interest of holding the staking mechanism is introduced.
-
-Using it people who locked some amount of coins and run node is rewarded.
-
-There are requirements which need met to activate staking:
+To incentivize interest in holding, a staking mechanism is introduced. People who lock some amount of coins and run a node are rewarded. To activate staking, the following requirements must be met:
 
 \begin{itemize}
     \item Collateral - 100\_000 OCTA
@@ -13,17 +9,15 @@ There are requirements which need met to activate staking:
     \item Node must be verified
 \end{itemize}
 
-To start staking it's necessary to have the address wallet with enough balance and link it to existing node.
-Reward will be come to the wallet provided.
+To begin staking, you need an address wallet with sufficient funds and link it to an existing node. Rewards will be sent to the provided wallet.
 
-If system detect balance less than collateral staking will be disabled for such wallet-node pair for
-several rounds.
+If the system detects a balance lower than the collateral, staking will be disabled for that wallet-node pair for several rounds.
 
 \subsection{Reward distribution scheme}
 
 The billing period is 1 week (every 7 days).
 
-Let's assume that block time is always 15 seconds then the following amount of blocks would be mined:
+Assuming that block time is always 15 seconds, the amount of blocks mined would be:
 
 \begin{itemize}
     \item 1 minute - 4
@@ -33,11 +27,11 @@ Let's assume that block time is always 15 seconds then the following amount of b
     \item 30 days - 172800
 \end{itemize}
 
-In this calculation we will use reward amount for Arcturus and Oldenburg eras where 1.5 OCTA from each block going to staking fund.
+We will use the reward amount for the Arcturus and Oldenburg eras to calculate; 1.5 OCTA from each block goes to the staking fund.
 
-The total amount of coins mined for 1 week would be 60480 OCTA.
+In total, 60480 OCTA will be mined in 1 week.
 
-Let’s assume we have 10 nodes up and running, then the 60480 OCTA would be distributed across they in the following proportion:
+Let's say 10 nodes are in operation; the 60480 OCTA will be shared between them in the following proportion:
 
 \begin{itemize}
     \item 60\% (base reward) - 36240 OCTA, 3624 for each node
@@ -46,12 +40,11 @@ Let’s assume we have 10 nodes up and running, then the 60480 OCTA would be dis
     \item 10\% (rent reward) - 6040 OCTA, 604 for each node which provide renting service
 \end{itemize}
 
-In case of no nodes for which needs to distribute 40\% (except base reward) the coins will be left in staking fund for the next round.
+If there are no nodes to which 40\% of coins (except for the base reward) can be distributed, the coins will remain in the staking fund for the next round.
 
-Most profitable variant is to have node with GPU and which provides both services.
-Such node will be rewarded by 6040 OCTA per week and also additional payments for services usage.
+The most profitable variant is to have a node with a GPU that provides both services. Such a node will receive 6040 OCTA per week, as well as additional payments for service usage.
 
-Due to the current scheme, we can calculate minimal monthly ROI in the following way:
+Using the current scheme, we can calculate a minimal monthly return on investment (ROI) as follows:
 
 \[
     ROI = \frac{MonthReward / Collateral * 100}{N} = \frac{M}{100} * 60
