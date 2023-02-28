@@ -13,5 +13,6 @@ dist: paper.tex
 
 clean:
 	ls paper.* | egrep -v "tex|bib" | xargs rm -f
+	rm -rf dist
 
 .PHONY: paper.tex

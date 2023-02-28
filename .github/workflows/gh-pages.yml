@@ -1,0 +1,31 @@
+name: GitHub Pages
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: paper.tex
+        extra_system_packages: py-pygments make
+        latexmk_shell_escape: true
+        pre_compile: make
+        post_compile: make dist
+
+    - name: Deploy
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
+        cname: whitepaper.octa.space
+        enable_jekyll: false
