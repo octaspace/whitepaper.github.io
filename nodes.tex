@@ -1,12 +1,9 @@
 \section{Nodes}
 
-In the nutshell node is a Linux machine with special software installed.
+A node is a Linux machine with special software installed, called ORC, which enables OCTA CORE to establish a secure communication channel with the node.
 
-This software is called \textbf{ORC}, using it \textbf{OCTA CORE} is able to establish secure communication channel to the node.
-
-Communication between \textbf{OCTA CORE} and \textbf{ORC} is doing in RPC\cite{rpc} like manner.
-
-Secure channel is implemented using HTTPS\cite{https} protocol with validating each request using security token.
+The communication between \textbf{OCTA CORE} and \textbf{ORC} is done in an RPC\cite{rpc}-like manner,
+and a secure channel is implemented using the HTTPS\cite{https} protocol, with each request being validated using a security token.
 
 \begin{figure}[H]
     \centering
@@ -17,17 +14,16 @@ Secure channel is implemented using HTTPS\cite{https} protocol with validating e
 \textbf{ORC} is responsible for the following activities:
 
 \begin{itemize}
-    \item Detect installed hardware: CPU, GPUs, RAM, volume of disk storage
-    \item Collect metrics about hardware usage, like free/used disk/ram space, CPU and GPU load, temperature and fans speed
+    \item Detecting installed hardware suchas CPU, GPUs, RAM, volume of disk storage
+    \item Collecting metrics about hardware usage, suhc as free/used disk/ram space, CPU and GPU load, temperature and fans speed
     \item Manage Docker\cite{docker} containers and Firecracker\cite{firecracker} microVMs
 \end{itemize}
 
 There are two types of nodes: \textbf{blockchain} and \textbf{service}
 
-The first one is responsible for support of OCTA Layer 1 blockchain by running network node software.
-As a result such nodes making network more stable, distributed, more latency fair and speed up the synchronization.
+The blockchain node supports the OCTA Layer 1 blockchain by running network node software, which makes the network more stable, distributed, more latency fair, and speeds up synchronization.
 
-Service node provides resources we used to implement services for the end users.
+The service node provides resources that are used to implement services for end-users.
 
 \subsection{Hardware and software requirements}
 
@@ -51,34 +47,39 @@ These performance metrics help users to choose the hardware they need for their 
 
 The node software can be installed on any Linux distribution; however, we primarily focus on Ubuntu LTS or Debian as the recommended operating systems.
 
-Support for Windows in development.
+Windows Subsystem for Linux (WSL) has limited support.
 
 \subsection{Security}
 
-To eliminate possible security risks for users running the software \textbf{ORC} on their machines, we follow a set of rules and guidelines, which include: 
+Security is of utmost importance to us, and we take various measures to eliminate possible security risks for users running our software ORC on their machines.
+
+We follow a set of rules and guidelines to ensure the security of our system, which includes:
 
 \begin{itemize}
-    \item \textbf{ORC} is open sourced, this may possible to make audit by other people that software does not have malicious code
-    \item Keep code base of \textbf{ORC} is small as possible for ease auditing
-    \item Node software run under non privilaged user and don't have any permissions which not need for operation
-    \item Regular software updates to ensure that the latest security patches are applied. Along with comprehensive testing of software to detect and address any potential security issues.
+    \item Open-sourcing \textbf{ORC}, which allows for audits by other people to ensure that the software does not have any malicious code
+    \item Keeping code base of \textbf{ORC} as small as possible for ease of auditing
+    \item Running node software under a non-privileged user and not granting any permissions that are not needed for its operation
+    \item Regular software updates to ensure that the latest security patches are applied. Along with comprehensive testing of software to detect and address any potential security issues
 \end{itemize}
+
+These measures are in place to ensure that our users can have peace of mind when using our system, and their data and resources are secure.
+
+We take the security of our users very seriously and are continuously working to improve our system's security features.
 
 \subsection{Verification}
 
-Ensuring that node infrastructure operates smoothly and reliably is crucial for providing high-quality services to end-users.
+Verification is critical to ensuring that the node infrastructure operates smoothly and reliably, which is essential for providing high-quality services to end-users.
+Every new node that joins the OctaSpace cloud must be verified and confirmed to meet the necessary requirements to provide services.
 
-Each new node that joins the cloud must be verified and confirmed to meet the necessary requirements and provide services.
+Periodic re-verification checks are conducted on verified nodes. It is therefore essential to monitor the status of your nodes to avoid them being changed to an unverified status.
 
-Periodically, we conduct re-verification checks on verified nodes. Therefore, it's crucial to monitor the status of your nodes to avoid having them changed to an unverified status.
-
-The checks performed to ensure that the node is properly configured may include but are not limited to:
+The checks performed to ensure that the node is properly configured may include, but are not limited to:
 
 \begin{itemize}
-    \item Meet minimum hardware requirements
-    \item System clock is synchronized
+    \item Meeting minimum hardware requirements
+    \item Synchronized system clock
     \item All necessary network ports are open
-    \item GPU driver is correctly installed
+    \item Correct installation of the GPU driver
 \end{itemize}
 
 The list of checks will be expanding in the future to ensure even greater accuracy and reliability.
@@ -86,6 +87,6 @@ The list of checks will be expanding in the future to ensure even greater accura
 The following restrictions are applied for the unverified nodes:
 
 \begin{itemize}
-    \item Nodes can't provide services
-    \item Nodes can't participate in \hyperref[sec:staking]{staking}
+    \item Unable to provide services
+    \item Unable to participate in staking \hyperref[sec:staking]{staking}
 \end{itemize}

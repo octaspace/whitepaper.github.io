@@ -9,19 +9,22 @@ The following picture shows the core components and interfaces
 \end{figure}
 
 \subsection{Blockchain}
-OctaSpace utilizes a Layer 1 PoW blockchain that is secured using the pirl 51\% guard technique. This security protocol provides protection against attacks on the network, making it a secure platform for users to transact on.
+OctaSpace employs a multi-layered blockchain system to provide a secure and efficient platform for users.
 
-In addition to the Layer 1 PoW blockchain, OctaSpace also employs a Layer 2 PoA blockchain that is used to speed up transactions for billing operations. This blockchain is based on validators and is not used to secure the Layer 1 PoW blockchain.
+At its core is a Layer 1 PoW blockchain, secured using the pirl 51\% guard technique, which provides robust protection against network attacks.
+In addition, OctaSpace uses a Layer 2 PoA blockchain, based on validators, to speed up transactions for billing operations without compromising the security of the Layer 1 blockchain.
 
-By utilizing this Layer 2 PoA blockchain, OctaSpace is able to process a large number of transactions quickly and efficiently for billing operations such as charging users for the services they have used.
+By using this Layer 2 PoA blockchain, OctaSpace can process a high volume of transactions quickly and efficiently
+for billing operations such as charging users for the services they have used.
 
-Overall, OctaSpace's use of the pirl 51\% guard and Layer 2 PoA blockchain demonstrate its commitment to security and efficiency. By employing these techniques, OctaSpace is able to provide a secure and stable platform for its users while also maintaining fast and efficient transactions for billing operations.
+The platform's innovative blockchain architecture demonstrates its commitment to providing a secure and stable platform for its users, while ensuring fast and efficient billing transactions.
+Overall, OctaSpace's blockchain infrastructure is a testament to its focus on security and efficiency, providing a reliable and scalable solution for distributed computing.
 
 \newpage
 
 \subsection{Layer 1 network}
 
-\textbf{OCTA Layer 1} is PoW\cite{pow} blockchain network is used for the frontend user financial operations using the native coin OCTA.
+\textbf{OctaSpace's Layer 1} network is Proof-of-Work (PoW\cite{pow}) blockchain used for frontend user financial operations using the native coin OCTA.
 
 Network based on go-ethereum\cite{go-ethereum} codebase with the following specification:
 
@@ -33,57 +36,64 @@ Network based on go-ethereum\cite{go-ethereum} codebase with the following speci
     \item Transaction fee is 21 Gwei
 \end{itemize}
 
-OctaSpace network is designed to be fair and transparent, without any premine or presale. To ensure an equitable distribution of rewards, the genesis difficulty was set at 100Gh, preventing the instant allocation of rewards.
+To ensure a fair and transparent network without any premine or presale, OctaSpace designed its network with an equitable distribution of rewards. The genesis difficulty was set at 100Gh, preventing the instant allocation of rewards
 
 \subsection{Layer 2 network}
 
-This is a side chain for Layer 1 network, implemented as PoA\cite{poa} network with a set of validators.
+OctaSpace employs a Layer 2 PoA network that serves as a side chain for the Layer 1 network.
 
-Used for handling internal transactions for the node services its lightning-fast performance and its seamlessly handling of high-frequency, high-usage operations,
-resulting in reduced operational costs, speedy transactions and a massive boost in charging operations throughput.
+This PoA network is used for internal transactions related to the node services and is supported by a set of validators.
+
+The Layer 2 network is designed to handle high-frequency, high-usage operations with lightning-fast performance and seamless operation.
+This translates to reduced operational costs, speedy transactions, and a massive boost in charging operations throughput for OctaSpace.
+
+By utilizing this Layer 2 PoA network, OctaSpace can ensure fast and efficient processing of internal transactions, allowing for a smoother user experience and improved overall platform performance.
+
 
 \subsection{Blockchain gateways}
 
-These gateways provides unified API for \textbf{OCTA CORE} layer to give it ability work with both blockchain networks.
 
-This API is private and not accessible outside.
+OctaSpace Blockchain Gateways provide a unified API for the OCTA CORE layer to work with both blockchain networks.
+
+The gateways' API is private and not accessible from outside the OctaSpace platform.
 
 \subsection{OCTA CORE and Application Layer}
-The engine of our system, the compute rental manager, seamlessly handles all requests for compute rentals and communicates with the nodes and user applications to make it effortless for users to access and use the resources of connected nodes.
 
-This layer is designed to be user-friendly, so even those without technical expertise can take advantage of the available resources with ease.
+The OCTA CORE and Application Layer serves as the engine of the system, seamlessly handling all requests for compute rentals and providing an interface for creating services on top of resources provided by nodes.
 
-Its the core engine of our system, it's responsible for the following operations:
+It communicates with the nodes and user applications, making it effortless for users to access and use the resources.
+
+Other core engine operations of the OCTA CORE and Application Layer include:
 
 \begin{itemize}
-    \item Communicates, monitoring and low level interaction with nodes
+    \item Communicating with nodes, monitoring and low-level interaction
     \item Handle requests for computing resources
     \item Provide interface for creating services on a top of resources provided by nodes
     \item Services usage charging and billing operations
     \item Provide API for automation or integration with third party systems
-    \item Fraud control
-    \item Statistic and telemetry of system usage
+    \item Implementing fraud control
+    \item Generating statistics and telemetry of system usage
 \end{itemize}
 
 \subsection{Resource Layer}
-While the Octa Chain is very capable at processing large amounts of transactions the real aim of the project is to provide real world applications and to bridge the gap of computational owners and computational users. Octa nodes were built to accomplish this.
+OCTA Chain is a powerful blockchain network, but the primary goal of the project is to provide practical applications and to bridge the gap between those who have computational resources and those who need them. This is where Octa nodes come in.
 
 This layer consist of hardware(nodes) connected to the OctaSpace cloud.
 
-Nodes are the foundation of our compute and services marketplace, providing the necessary computational power to meet the demands of tasks.
+These hardware nodes are connected to the OctaSpace cloud and form the foundation of our compute and services marketplace,
+providing the necessary computational power to meet the demands of various tasks and services.
 
-These computers are equipped with a blend of CPUs, GPUs, memory, and disk space that allows them to handle distributed workloads with ease.
+The nodes are equipped with a blend of CPUs, GPUs, memory, and disk space that allows them to handle distributed workloads with ease.
+OctaSpace seamlessly connects these nodes together to deliver optimal performance and efficiency.
 
-The nodes are connected to the OctaSpace, which enables them to seamlessly work together to deliver optimal performance and efficiency.
-
-The tasks and services may vary, well equipped machines with powerful GPU may performs AI/ML tasks, common machines may acts as VPN gateway, provide disk storage for services like file sharing or host applications deployed by users.
+Machines with powerful GPUs can perform AI/ML tasks, while common machines can act as VPN gateways or provide disk storage for services like file sharing or host applications deployed by users.
 
 \subsection{API and UI}
 
-To work with system the following interfaces available:
+The following interfaces are available for interacting with the system:
 
 \begin{itemize}
-    \item Web applicaton with user-friendly interface: \url{https://cube.octa.space}
+    \item Web applicaton with user-friendly interface accessible at \url{https://cube.octa.space}
     \item RESTful API
-    \item \textbf{octactl} command-line utility that provide user friendly interface to RESTful API
+    \item An \textbf{octactl} command-line utility that provide user friendly interface to RESTful API
 \end{itemize}
