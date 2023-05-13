@@ -1,31 +1,23 @@
 \section{Services}
 
-OctaSpace is committed to providing services that address the needs of end-users, offering solutions to everyday problems. These services range from performing complex calculations to simple file sharing between friends, and more. Our team is continually striving to bring new and innovative services to our users, and we are excited to share with you some of the services that we have already implemented or plan to implement in the near future.
+At OctaSpace, we are committed to providing innovative and practical services to address the needs of end-users. Our range of services includes solutions for everyday problems, from simple file sharing between friends to performing complex calculations, and more. Our team is continually striving to bring new and cutting-edge services to our users, and we are excited to share some of our existing and upcoming services with you.
 
-We believe that our services will be of significant interest to users and will have practical applications in their daily lives. Our goal is to continually improve and evolve our offerings to meet the changing needs of our users. 
+Our services have been designed with end-users in mind, and we believe they will have significant practical applications in their daily lives. We are constantly improving and evolving our offerings to meet the changing needs of our users. Our goal is to provide our users with an exceptional experience and to offer services that make their lives easier and more efficient.
 
 \subsection{GPU marketplace}
 
-The unique GPU marketplace where users can rent or rent out GPU compute power, our GPU rental service provides users with the ability to leverage powerful GPUs for tasks in AI/ML, CGI rendering, and other fields that require high-performance computing. Our support for both NVIDIA and AMD GPUs expands the range of tasks that can be tackled.
+OctaSpace offers a unique GPU marketplace where users can rent or rent out GPU compute power. Our GPU rental service provides users with the ability to leverage powerful GPUs for tasks in AI/ML, CGI rendering, and other fields that require high-performance computing. Our support for both NVIDIA and AMD GPUs expands the range of tasks that can be tackled.
 
-Users can access their rented GPU instances via the secure SSH protocol, and also have the option of using Jupyter\cite{jupyter}and LiveBook\cite{livebook} systems for interactive access. These rented GPU instances can be combined into a cluster, allowing for the development and execution of distributed programs. For instance, users can use TensorFlow or PyTorch for distributed training of ML models.
+Users can securely access their rented GPU instances through the SSH protocol, and also have the option of using Jupyter\cite{jupyter}and LiveBook\cite{livebook} systems for interactive access. By combining rented GPU instances into a cluster, users can develop and execute distributed programs. For instance, users can use TensorFlow or PyTorch for distributed training of ML models. 
 
-By providing powerful and flexible GPU rental options, we aim to empower users with the resources they need to solve complex problems and accelerate their projects.
+Our aim is to empower users with the resources they need to solve complex problems and accelerate their projects by providing powerful and flexible GPU rental options.
 
 \subsection{VPN}
 
 OCTA VPN\cite{VPN} offers a variety of key benefits to its users.
 One of the main advantages is its ease of setup, which is made possible by utilizing non-modified and open-source software that is compatible with a wide range of platforms.
 
-Additionally, users have the flexibility to choose from a variety of VPN technologies to suit their needs.
-There are also no limitations on the number of devices that can be connected simultaneously.
-
-To add to that, the billing model is pay-as-you-go, which means you are billed only for the amount of data you use.
-This gives you complete control over your usage and costs.
-
-Service don’t any logging of the user traffic or DNS requests.
-
-VPN access is implemented using the following technologies:
+Additionally, users have the flexibility to choose from a variety of VPN technologies to suit their needs, including:
 
 \begin{itemize}
     \item WireGuard
@@ -33,31 +25,44 @@ VPN access is implemented using the following technologies:
     \item OpenVPN
 \end{itemize}
 
+There are also no limitations on the number of devices that can be connected simultaneously.
+
+To add to that, the billing model is pay-as-you-go, which means you are billed only for the amount of data you use.
+This gives you complete control over your usage and costs.
+
+Service don’t any logging of the user traffic or DNS requests.
+
 In the future more VPN types will be added, including some to bypass China's golden shield (Great Firewall of China).
-\subsection{Remote Video Gaming}
 
-Many have tried and failed with Stadia recently falling. All these services essentially rely on massive centralized server farms which inherently introduces huge latency issues resulting in bad gaming experience if your not located with 100km of the facility.
-
-But with OctaSpace and enough nodes it may finally be possible for a remote gaming service to be widly used utilizing nodes across the globe allowing gamers to use share unused hardware. By connecting to say your neighbours unused pc would solve the major problem of latency in remote gaming services.
+With OCTA VPN, we aim to provide users with a reliable, flexible, and cost-effective VPN solution that meets their specific needs and preferences.
 
 \subsection{HashCache}
 
-HashCache is a Password Recovery service for performing password cracking operations on a large scale. It utilizes multiple nodes working together in a coordinated manner to speed up the cracking process. This is achieved by dividing the cracking workload among the nodes, allowing them to work in parallel on different parts of the task.
+HashCache is a powerful password recovery service that can perform cracking operations on a large scale. The system utilizes multiple nodes that work together in a coordinated way to speed up the cracking process. By dividing the cracking workload among the nodes, HashCache can efficiently crack passwords and perform other related operations much faster than a single machine ever could.
 
-The system is designed to be highly configurable and can be optimized for different types of cracking operations, such as dictionary attacks, brute force attacks, and others.
+HashCache is highly configurable and can be optimized for different types of cracking operations, including dictionary attacks, brute force attacks, and others. This flexibility enables users to tailor the service to their specific needs, making it an excellent tool for both security professionals and individuals who want to recover lost or forgotten passwords.
+
+Overall, HashCache provides a powerful and efficient solution for password cracking that can help users save time and effort. By harnessing the power of multiple nodes working together, HashCache provides a highly scalable and customizable service that can meet the needs of a wide range of users.
+
 
 \subsection{Distributed Rendering}
 
-Another service example would be a distributed handbrake video encoding network. To allow content creators or studios to quickly render out massive edits economically.
+OctaSpace offers a distributed rendering service that enables content creators and studios to render massive video edits quickly and economically. This service utilizes the power of multiple nodes working together in a coordinated manner to accelerate the rendering process. By dividing the workload among the nodes, they can work in parallel on different parts of the rendering task, significantly reducing the time and cost required to complete the process.
+
+Our distributed rendering service is highly configurable and optimized for different types of rendering tasks, whether it is video editing or CGI rendering. Our team continually strives to improve the service to meet the changing needs of our users. With OctaSpace's distributed rendering service, content creators and studios can produce high-quality content faster and more cost-effectively.
 
 \subsection{Instant File Sharing}
 
-This service provide a easy way to upload a file, share a short link, and after it is downloaded, the file is completely deleted.
+OctaSpace offers a secure and convenient solution for file sharing through its Instant Secure File Sharing service. This service provides a user-friendly interface for uploading files and generating a short link that can be easily shared with others.
 
-Key benefits:
+Once the file is downloaded, it is completely deleted, ensuring the confidentiality of your data.
+
+Key benefits of our Instant Secure File Sharing service include:
 
 \begin{itemize}
-    \item All files are encrypted
-    \item It's possible to set expiration (Time To Live), after such period file will be deleted
-    \item Simple RESTful API
+    \item Encryption of all files to protect the confidentiality of your data
+    \item The ability to set an expiration date, after which the file will be automatically deleted to ensure your data remains secure
+    \item Simple RESTful API for seamless integration with your existing systems
 \end{itemize}
+
+With our Instant Secure File Sharing service, you can easily and securely share files with others, without worrying about the privacy and security of your data.

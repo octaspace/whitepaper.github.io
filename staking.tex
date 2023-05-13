@@ -1,7 +1,7 @@
 \section{Staking}
 \label{sec:staking}
 
-To incentivize interest in holding, a staking mechanism is introduced. People who lock some amount of coins and run a node are rewarded. To activate staking, the following requirements must be met:
+OctaSpace introduces a staking mechanism to incentivize holding of the OCTA currency. This mechanism allows users to lock a certain amount of coins and run a node to receive rewards. To activate staking, the following requirements must be met:
 
 \begin{itemize}
     \item Collateral - 100\_000 OCTA
@@ -10,12 +10,13 @@ To incentivize interest in holding, a staking mechanism is introduced. People wh
 \end{itemize}
 
 To begin staking, you need an address wallet with sufficient funds and link it to an existing node. Rewards will be sent to the provided wallet.
+However, if the system detects a balance lower than the collateral, staking will be disabled for that wallet-node pair for several rounds.
 
-If the system detects a balance lower than the collateral, staking will be disabled for that wallet-node pair for several rounds.
+By staking, users help secure the network and promote its stability. Additionally, stakers have the potential to earn passive income through rewards and dividends.
 
 \subsection{Reward distribution scheme}
 
-The billing period is 1 week (every 7 days).
+The project's billing period lasts for one week, or seven days.
 
 Assuming that block time is always 15 seconds, the amount of blocks mined would be:
 
@@ -42,7 +43,7 @@ Let's say 10 nodes are in operation; the 60480 OCTA will be shared between them 
 
 If there are no nodes to which 40\% of coins (except for the base reward) can be distributed, the coins will remain in the staking fund for the next round.
 
-The most profitable variant is to have a node with a GPU that provides both services. Such a node will receive 6040 OCTA per week, as well as additional payments for service usage.
+The most profitable scenario is to have a node with a GPU that provides both services. Such a node will receive 6040 OCTA per week, as well as additional payments for service usage.
 
 Using the current scheme, we can calculate a minimal monthly return on investment (ROI) as follows:
 
